@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Spark</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Your spark for right now</p>
+
+    <img class="hero"
+         src="{{ url_for('static', filename='images/' + spark.image) }}"
+         alt="A picture that matches today's idea">
+
+    <h1 class="idea">{{ spark.idea }}</h1>
+    <span class="tag">#{{ spark.tag }}</span>
+
+    <button class="button" onclick="location.reload()">Another spark</button>
+
+    <p class="foot">Built by Jordan, running in Docker.</p>
+  </main>
+</body>
+</html>

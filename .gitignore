@@ -1,0 +1,23 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Editors / IDEs ----
+.vscode/
+.idea/
+
+# ---- Node (if a frontend build is ever added) ----
+node_modules/
+
+# NOTE: images are intentionally tracked in this repo (no image rules here).

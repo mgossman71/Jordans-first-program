@@ -1,0 +1,25 @@
+# Daily Spark -- docker-compose.yml
+# This is the "one-command" file. To run everything:  docker compose up --build
+
+services:
+  daily-spark:
+    build: .                       # build the image from the Dockerfile in here
+    container_name: daily-spark
+    ports:
+      - "8000:5000"                # laptop port 8000  ->  container port 5000
+    volumes:
+      # Share the images folder. Now we can drop in new art and it shows up
+      # live -- no need to rebuild the whole box just to change a picture.
+      - ./static/images:/app/static/images
+    restart: unless-stopped
+
+  scooter:
+    image: nginx:alpine             # a tiny, fast web server for static sites
+    container_name: scooter
+    ports:
+      - "8001:80"                   # laptop port 8001  ->  container port 80
+    volumes:
+      # Serve the scooter/ folder. Edit the page or drop in scooter.jpg and it
+      # updates live -- no rebuild needed.
+      - ./scooter:/usr/share/nginx/html:ro
+    restart: unless-stopped
