@@ -1,3 +1,11 @@
 .git
+.gitignore
 __pycache__
 *.pyc
+.DS_Store
+.vscode
+.idea
+# not needed inside the Flask box (the scooter page runs in its own nginx box)
+scooter
+docker-compose.yml
+README.md

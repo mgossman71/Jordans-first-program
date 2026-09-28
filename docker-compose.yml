@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   scooter:
-    image: nginx:alpine             # a tiny, fast web server for static sites
+    image: nginx:1.27-alpine        # a tiny, fast web server for static sites (version pinned)
     container_name: scooter
     ports:
       - "8001:80"                   # laptop port 8001  ->  container port 80

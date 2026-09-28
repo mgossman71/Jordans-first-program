@@ -17,7 +17,7 @@
     <h1 class="idea">{{ spark.idea }}</h1>
     <span class="tag">#{{ spark.tag }}</span>
 
-    <button class="button" onclick="location.reload()">Another spark</button>
+    <a class="button" href="{{ url_for('home', prev=index) }}">Another spark</a>
 
     <p class="foot">Built by Jordan, running in Docker.</p>
   </main>
